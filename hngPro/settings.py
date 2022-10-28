@@ -26,7 +26,28 @@ SECRET_KEY = 'django-insecure-kmb^85on*lu7@v5q5*q&khwzf^urwgk4=13)fg*ym^kn=e46w)
 DEBUG = True
 
 ALLOWED_HOSTS = ["127.0.0.1", "hngslack.herokuapp.com"]
+CORS_ORIGIN_ALLOW_ALL =True
 
+CORS_ALLOW_METHODS = [
+    "DELETE",
+    "GET",
+    "OPTIONS",
+    "PATCH",
+    "POST",
+    "PUT",
+]
+
+CORS_ALLOW_HEADERS = [ 
+    'accept',
+    "accept-encoding",
+    "authorization",
+    'content-type',
+    "dnt",
+    "origin",
+    "user-agent",
+    "x-csrftoken",
+    "x-requested-with",
+]
 
 # Application definition
 
@@ -40,6 +61,7 @@ INSTALLED_APPS = [
 
     # Third party app
     "rest_framework",
+    'corsheaders', 
 
     # local app
     "hngSlack",
@@ -48,6 +70,7 @@ INSTALLED_APPS = [
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',

@@ -17,4 +17,4 @@ class HngDetailsList(APIView):
             "bio": "I am a python developer"
         } 
 
-        return Response(data)
+        return JsonResponse(data)

@@ -1,6 +1,6 @@
 from django.urls import path
-from .views import HngDetailsList
+from .views import arithmeticApi
 
 urlpatterns = [
-    path('', HngDetailsList.as_view())
+    path('', arithmeticApi),
 ]

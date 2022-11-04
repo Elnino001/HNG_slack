@@ -6,3 +6,8 @@ class HngSerializer(serializers.ModelSerializer):
         model = models.HngSlackDetails
         fields = ('slackUsername', 'backend', 'age', 'bio')
 
+class ArithmeticSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = models.Arithmetic
+        fields = ("operation_type", "x", "y",)
+

@@ -8,3 +8,8 @@ class HngSlackDetails(models.Model):
     backend = models.BooleanField()
     age = models.IntegerField(validators=[MinValueValidator(1)])
     bio = models.TextField()
+
+class Arithmetic(models.Model):
+    operation_type =models.CharField(max_length=90)
+    x = models.IntegerField()
+    y = models.IntegerField()

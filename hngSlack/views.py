@@ -9,12 +9,13 @@ from .models import HngSlackDetails
 #     queryset = models.HngSlackDetails.objects.all()
 
 class HngDetailsList(APIView):
-    def get(self, *args, **kwargs):
-        data = {
-            "slackUsername": "Aniche",
-            "backend": True,
-            "age": 28,
-            "bio": "I am a python developer"
-        } 
+    def post(self, request, *args, **kwargs):
+        posted_data = self.request.data
+        city = posted_data['city']
+        return_data = [ 
+            {'city': city}
+        ]
 
-        return JsonResponse(data)
+        
+
+        return Response(status = 200, data = return_data)

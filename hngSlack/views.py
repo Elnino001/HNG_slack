@@ -25,7 +25,7 @@ def arithmeticApi(request):
     else:
         result = x * y
     context = {
-        "slackUsername": " ",
+        "slackUsername": "Aniche",
         'operation_type': operation_type,
         'result': result
     }
